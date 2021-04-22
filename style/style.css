@@ -1,6 +1,169 @@
+/* ---------- Import des fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap');
 
+/* ---------- Variables générales ---------- */
+html {
+    --main-color-back: #293144;
+    --text-color: rgb(238, 238, 238);
+    /* nice color : rgb(216, 76, 76) */
+}
 
+/* ---------- CORPS DE LA PAGE ---------- */
 body {
     margin: 0;
     padding: 0;
+    
+    /** Temporaire **/
+    height: 2000px; 
+    /* padding: 20px 80px; */
+}
+
+/* ---------- HEADER ---------- */
+header {
+    width: 100%;
+    height: 10vh;
+    background-color: var(--main-color-back);
+}
+
+/* ----- MENU DE NAVIGATION ----- */
+nav {
+    display: flex;
+    flex-direction: row;
+}
+
+nav #box-hamburger {
+    position: absolute;
+    right: 0;
+    margin: 10px 20px 0 0;
+}
+
+/* Onglet menu */
+#menu {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100vh;
+    background-color: rgb(216, 76, 76);
+    /* Anim */
+    transform: translateX(-101%);
+    transition: transform 1s ease-in-out;
+}
+
+#menu a {
+    margin: 50px 0 0 50px;
+    /* text */
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.4em;
+    font-weight: 400;
+    color: var(--text-color);
+    /* anim */
+    transform: translateX(0px);
+    transition: transform 0.2s ease-in-out;
+}
+
+#menu a:hover {
+    cursor: pointer; 
+    /* text */
+    font-weight: 500;
+    /* anim */
+    transform: translateX(20px);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Anim menu */
+#menu.visible {
+    display: flex;
+    transform: translateX(0);
+    transition: transform 1s ease-in-out;
+}
+
+/* ----- Bouton menu ----- */
+#box-hamburger {
+    width: 50px;
+    height: 50px;
+    border: none;
+    position: relative;
+    background-color: #29314400;   
+    cursor: pointer;
+}
+
+#container-lignes {
+    width: 80%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.ligne {
+    position: absolute;
+    border-radius: 10px;
+    width: 100%;
+    height: 15%;
+    background: rgb(255, 255, 255);
+}
+
+#box-hamburger .ligne:nth-child(1) {
+    top: 0;
+}
+
+#box-hamburger .ligne:nth-child(2) {
+    top: 42%;
+}
+
+#box-hamburger .ligne:nth-child(3) {
+    top: 85%;
+}
+
+/* Anim menu burger */
+#box-hamburger #container-lignes {
+    transition: transform 0.4s ease-in-out;
+}
+
+#box-hamburger.active #container-lignes {
+    transition: transform 0.4s 0.4s ease-in-out;
+    transform: translate(-50%, -50%) rotate(360deg);
+}
+
+#box-hamburger .ligne:nth-child(1), .ligne:nth-child(3) {
+    transform: rotate(0deg);
+    transition: 
+        transform 0.4s ease-in-out,
+        top 0.4s 0.4s ease-in-out;
+}
+
+#box-hamburger .ligne:nth-child(2) {
+    transition: opacity 0.4s 0.4s ease-in-out;
+}
+
+#box-hamburger.active .ligne:nth-child(1) {
+    top: 42.5%;
+    transform: rotate(45deg);
+    transition: 
+        top 0.4s ease-in-out,
+        transform 0.4s 0.4s ease-in-out;
+}
+
+#box-hamburger.active .ligne:nth-child(2) {
+    transition: opacity 0.4s ease-in-out;
+    opacity: 0;
+}
+
+#box-hamburger.active .ligne:nth-child(3) {
+    top: 42.5%;
+    transform: rotate(-45deg);
+    transition: 
+        top 0.4s ease-in-out,
+        transform 0.4s 0.4s ease-in-out;
+}
+
+/* ---------- HOME ---------- */
+
+#home {
+    top: 0;
+    width: 100%;
+    height: 90vh;
+    background-color: var(--main-color-back);
 }
