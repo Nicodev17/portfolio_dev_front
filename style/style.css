@@ -4,8 +4,15 @@
 /* ---------- Variables générales ---------- */
 html {
     --main-color-back: #293144;
+    --main-color-bis: #2C3E56;
+    --color-grey : #6a7a91;
+    --red-color: #df351e;
+    --orange-color: #FF5935;
     --text-color: rgb(238, 238, 238);
-    /* nice color : rgb(216, 76, 76) */
+    --main-font: 'Raleway', sans-serif;
+
+    /* --nice-other-red: rgb(216, 76, 76); */
+    /* modern-violet :  #873aff;*/
 }
 
 /* ---------- CORPS DE LA PAGE ---------- */
@@ -23,6 +30,7 @@ header {
     width: 100%;
     height: 10vh;
     background-color: var(--main-color-back);
+    /* border: 2px solid red; */
 }
 
 /* ----- MENU DE NAVIGATION ----- */
@@ -39,42 +47,64 @@ nav #box-hamburger {
 
 /* Onglet menu */
 #menu {
-    display: flex;
-    flex-direction: column;
+    z-index: 2;
     width: 50%;
     height: 100vh;
-    background-color: rgb(216, 76, 76);
+    background-color: var(--main-color-bis);
     /* Anim */
     transform: translateX(-101%);
     transition: transform 1s ease-in-out;
 }
 
-#menu a {
-    margin: 50px 0 0 50px;
+#container-liens {
+    display: flex;
+    flex-direction: column;
+    margin: 120px 0 0 50px;
+}
+
+#container-liens a {
+    margin-top: 50px;
     /* text */
-    font-family: 'Raleway', sans-serif;
-    font-size: 1.4em;
-    font-weight: 400;
+    font-family: var(--main-font);
+    font-size: 1.3em;
+    font-weight: 500;
     color: var(--text-color);
     /* anim */
     transform: translateX(0px);
     transition: transform 0.2s ease-in-out;
 }
 
-#menu a:hover {
-    cursor: pointer; 
-    /* text */
-    font-weight: 500;
+#container-liens a:hover {
+    cursor: pointer;
     /* anim */
     transform: translateX(20px);
     transition: transform 0.2s ease-in-out;
 }
 
-/* Anim menu */
+/* Traits en dessous des liens */
+.trait {
+    width: 50%;
+    height: 3px;
+    margin-top: 5px;
+    background-color: white;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Anim apparition menu */
 #menu.visible {
     display: flex;
     transform: translateX(0);
     transition: transform 1s ease-in-out;
+}
+
+/* Anim trait lien */
+.lien-actif + .trait {
+    background-color: var(--red-color) ;
+    opacity: 1;
+    transform: translateX(25%);
+    transition: transform 0.2s ease-in-out opacity 0.4s 0.4s ease-in-out;
 }
 
 /* ----- Bouton menu ----- */
@@ -162,8 +192,68 @@ nav #box-hamburger {
 /* ---------- HOME ---------- */
 
 #home {
-    top: 0;
+    margin-top: -10vh;
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     background-color: var(--main-color-back);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* border: 2px solid green; */
+}
+
+#container-brand {
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Texte */
+#texte {
+    z-index: 1;
+    text-align: center;
+    font-family: var(--main-font);
+    color: var(--text-color);
+}
+
+h1 {
+ margin-bottom: 30px;
+ font-size: 1.6em;
+ font-weight: 600;
+}
+
+h2 {
+    color: rgb(218, 218, 218);
+    font-size: 1.7em;
+    font-weight: 500;
+}
+
+#logo {
+    z-index: -1;
+    position: absolute;
+    transform: translateY(-80px);
+}
+
+/* Forme */
+svg {
+    width: 400px;
+    height: 180px;
+    background: transparent;
+}
+
+circle {
+    cy: 330;
+    opacity: 0;
+    transition: cy 1s ease-in-out, opacity 1s ease-in-out; 
+}
+
+circle.visible {
+    fill: var(--red-color);
+    cx: 200;
+    cy: 170; 
+    r: 150;
+    opacity: 1;
 }
