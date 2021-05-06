@@ -1,0 +1,70 @@
+[
+    {
+        "titre": "Chalets et Caviar - Site WordPress",
+        "sousTitre": "Site de vente et de location de chalets de luxe",
+        "imageSrc": "./media/img/img_chalets_caviar.png",
+        "description": "<br></br>Bravo ! Vous venez de vous lancer en tant que développeur freelance et vous avez décroché votre premier contrat.<br><br>Votre client ? L’agence immobilière “Chalets et caviar” de Courchevel.<br><br>Cette agence possède une quinzaine de chalets de luxe à la vente et une vingtaine en location.<br><br>Cependant, elle ne possède pas encore de site web pour promouvoir la vente et la location de ses chalets. C’est pour cette raison qu’elle fait appel à vous !<br><br> Vous allez devoir : <ul> <li>Sélectionner un thème Wordpress adapté aux besoins du client et l'intégrer</li> <li>Adapter un thème Wordpress pour respecter les exigences du client</li> <li>Rédiger une documentation technique à l'intention d'utilisateurs non spécialistes</li> </ul>",
+        "notation": "Projet Validé. <br><br> Mot du jury : Très bon projet réalisé par Nicolas, ce dernier répond aux attentes du cahier des charges.",
+        "linkProjet": "https://chalets-et-caviar-nicolas-sartelet-oc.000webhostapp.com/"
+    },
+    {
+        "titre": "Site d'un Festival de Films",
+        "sousTitre": "Analyse des besoins web d'un client",
+        "imageSrc": "./media/img/img_festival_films.png",
+        "description": "<br><br>lorem ipsum",
+        "notation": "Projet Validé",
+        "linkProjet": ""
+    },
+    {
+        "titre": "Conception UML/SQL - ExpressFood",
+        "sousTitre": "Solution technique d'une application de restauration en ligne",
+        "imageSrc": "./media/img/img_expressfood_uml.png",
+        "description": "<br><br>lorem ipsum",
+        "notation": "Projet Validé",
+        "linkProjet": ""
+    },
+    {
+        "titre": "Générateur de phrases aléatoires",
+        "sousTitre": "Création d'un générateur de phrases drôles en JS",
+        "imageSrc": "./media/img/img_generateur.png",
+        "description": "<br><br>lorem ipsum",
+        "notation": "Projet Validé",
+        "linkProjet": "",
+        "linkGithub": ""
+    },
+    {
+        "titre": "Chilvary War - Jeu de plateau",
+        "sousTitre": "Création d'un jeu de combat tour par tour en JS",
+        "imageSrc": "./media/img/img_chivalry_war.png",
+        "description": "<br><br>lorem ipsum",
+        "notation": "Projet Validé",
+        "linkProjet": "https://chivalry-war-nicolas-sartelet.netlify.app/",
+        "linkGithub": "https://github.com/Nicodev17/Jeu_JS"
+    },
+    {
+        "titre": "Vicino Resto - Avis de restaurants",
+        "sousTitre": "Site d'avis sur les restaurants proches de l'utilisateur",
+        "imageSrc": "./media/img/img_vicino_resto.png",
+        "description": "<br><br>lorem ipsum",
+        "notation": "Projet Validé",
+        "linkProjet": "",
+        "linkGithub": ""
+    },
+    {
+        "titre": "Todo-List App - Reprise de projet",
+        "sousTitre": "Reprise et amélioration d'un projet existant et intégration de tests",
+        "imageSrc": "./media/img/img_todos.png",
+        "description": "<br><br>lorem ipsum",
+        "notation": "Projet Validé",
+        "linkProjet": "",
+        "linkGithub": ""
+    },
+    {
+        "titre": "Mini Synthétiseur en JS",
+        "sousTitre": "Développement d'un mini piano avec la web audio API",
+        "imageSrc": "./media/img/mini_synth.png",
+        "description": "<br><br> Lorem Ipsum",
+        "linkProjet": "",
+        "linkGithub": ""
+    }
+]
