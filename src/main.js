@@ -197,6 +197,8 @@ function initProjet(projets) {
 
         // Remplissage de l'overlay
         const newTitre = document.createElement("h5");
+        const newBoxClose = document.createElement("div");
+        newBoxClose.id = "box-close-pop";
         const newSousTitre = document.createElement("h6");
         const newImage = document.createElement("div");
         const newDescription = document.createElement("p");
@@ -204,6 +206,7 @@ function initProjet(projets) {
         newBoxLiens.id = "box-liens";
         const newLienProjet = document.createElement("button");
 
+        newOverlay.appendChild(newBoxClose).innerHTML = `<img src="media/img/close.png"></img>`;
         contentOverlay.appendChild(newTitre).innerHTML = titre + '<hr> </hr>';
         contentOverlay.appendChild(newSousTitre).innerHTML = sousTitre;
         contentOverlay.appendChild(newImage).innerHTML = `<img src="${imageSrc}"></img>`;
@@ -226,7 +229,7 @@ function initProjet(projets) {
         hoverProjet(newProjet);
 
         // Event Ouverture / fermeture overlay
-        openOverlay(newProjet, newOverlay, newBoxOverlay, boxBackground);
+        openOverlay(newProjet, newOverlay, newBoxOverlay, boxBackground, newBoxClose);
     });
 }
 
@@ -248,7 +251,8 @@ function hoverProjet($projet) {
     });
 }
 
-function openOverlay($projet, $overlay, $newBoxOverlay, $boxBackground) {
+function openOverlay($projet, $overlay, $newBoxOverlay, $boxBackground, $boxClose) {
+    
     $projet.addEventListener("click", event => {
         $boxBackground.style.display = 'flex';
         $newBoxOverlay.style.display = 'flex';
@@ -260,6 +264,13 @@ function openOverlay($projet, $overlay, $newBoxOverlay, $boxBackground) {
             $newBoxOverlay.style.display = 'none';
             $overlay.style.display = 'none';
             body.style.overflowY = 'scroll'; 
+        });
+        
+        $boxClose.addEventListener("click", event => {
+            $boxBackground.style.display = 'none';
+            $newBoxOverlay.style.display = 'none';
+            $overlay.style.display = 'none';
+            body.style.overflowY = 'scroll';
         });
     });
 }

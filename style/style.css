@@ -1006,11 +1006,26 @@ h2 {
 }
 
 /* Image overlay */
-#overlay-projet img {
+#overlay-projet img:not(#box-close-pop img) {
     width: 100%;
     height: auto;
     border: 8px solid white;
     border-radius: 5px;
+}
+
+/* Croix de fermeture overlay */
+#box-close-pop {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 15px 60px 0 0;
+}
+
+#box-close-pop img {
+    position: fixed;
+    width:35px;
+    height: auto;
+    cursor: pointer;
 }
 
 /* Texte descriptif de l'overlay */
@@ -1045,9 +1060,11 @@ h2 {
     flex-direction: row;
 }
 
-/* a déplacer dans les médias queries par la suite */
-#overlay-projet #box-liens {
-    flex-direction: column;
+/* à déplacer dans les médias queries par la suite */
+@media  screen and (max-width: 700px) {
+    #overlay-projet #box-liens {
+        flex-direction: column;
+    }
 }
 
 #overlay-projet button {
