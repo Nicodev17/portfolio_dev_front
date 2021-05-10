@@ -18,7 +18,7 @@ const filtreProjets = document.querySelectorAll('#navbar-projets a');
 boxHamburger.addEventListener('click', event => {
     event.target.classList.toggle('active');
     menu.classList.toggle('visible');
-    if(menu.classList.contains('visible')) {
+    if (menu.classList.contains('visible')) {
         body.style.overflow = 'hidden';
     } else {
         body.style.overflow = 'visible';
@@ -30,13 +30,13 @@ liens.forEach((element, index) => {
     element.addEventListener("mouseover", event => {
         element.classList.toggle("lien-actif");
     });
-    
+
     element.addEventListener("mouseleave", event => {
         element.classList.toggle("lien-actif");
     });
-    
+
     element.addEventListener("click", event => {
-        traitLien[index].style.width= '0%';
+        traitLien[index].style.width = '0%';
         body.style.overflow = 'visible';
         // Décalage du repli du menu pour éviter le bug visuel
         setTimeout(() => {
@@ -60,18 +60,18 @@ window.addEventListener('load', event => {
 window.addEventListener("scroll", event => {
     // Partie soft skills
     softSkills.forEach(element => {
-        if(window.scrollY > 880) {
+        if (window.scrollY > 880) {
             element.classList.add('visible');
         }
     });
 
     // Partie Comp
-    if(window.scrollY > 1500) {
+    if (window.scrollY > 1500) {
         changeProgress();
     }
 
     // Partie projets 
-    if(window.scrollY > 1900) {
+    if (window.scrollY > 1900) {
         cercleProjets.classList.add('visible');
     }
 });
@@ -91,30 +91,30 @@ const barreUi = document.querySelector("#progress9");
 
 function changeProgress() {
     containerBarre.forEach((element, index) => {
-        setTimeout(() => {element.style.opacity = '1';}, Number((index + '00')/1.2) );
-        setTimeout(() => {logosComp[index].style.opacity = '1';}, Number((index + '00')/1.2) );
+        setTimeout(() => { element.style.opacity = '1'; }, Number((index + '00') / 1.2));
+        setTimeout(() => { logosComp[index].style.opacity = '1'; }, Number((index + '00') / 1.2));
     });
 
     barreHtml.style.width = '80%';
-    setTimeout(() => {barreCss.style.width = '75%';}, 150);
-    setTimeout(() => {barreJs.style.width = '70%';}, 300);
-    setTimeout(() => {barreReact.style.width = '40%';}, 450);
-    setTimeout(() => {barreJquery.style.width = '80%';}, 600);
-    setTimeout(() => {barreJasmine.style.width = '70%';}, 750);
-    setTimeout(() => {barreUml.style.width = '80%';}, 900);
-    setTimeout(() => {barreWordpress.style.width = '50%';}, 1050);
-    setTimeout(() => {barreUi.style.width = '60%';}, 1200);
+    setTimeout(() => { barreCss.style.width = '75%'; }, 150);
+    setTimeout(() => { barreJs.style.width = '70%'; }, 300);
+    setTimeout(() => { barreReact.style.width = '40%'; }, 450);
+    setTimeout(() => { barreJquery.style.width = '80%'; }, 600);
+    setTimeout(() => { barreJasmine.style.width = '70%'; }, 750);
+    setTimeout(() => { barreUml.style.width = '80%'; }, 900);
+    setTimeout(() => { barreWordpress.style.width = '50%'; }, 1050);
+    setTimeout(() => { barreUi.style.width = '60%'; }, 1200);
 };
 
 // ---------- Partie Projets ----------
-function filtrageProjets()  {
+function filtrageProjets() {
     // --- Barre de filtrage des projets ---
     filtreProjets.forEach(element => {
         element.addEventListener('click', () => {
             let elActif = document.querySelector('#navbar-projets .active');
             elActif.classList.remove('active');
             element.classList.add('active');
-            
+
             // Temporaire : après il faudra mettre tous les projets dans un tableau que l'on filtrera à a chaque clic sur un filtre
             // switch (element.id) {
             //     case 'filtre-all':
@@ -146,10 +146,10 @@ filtrageProjets();
 // Récupération des infos des projets
 function getProjets() {
     fetch('src/projets.json').then((response) => {
-        if(response.ok) {
+        if (response.ok) {
             response.json().then((json) => {
-            let reponse = json;
-            initProjet(reponse);
+                let reponse = json;
+                initProjet(reponse);
             });
         } else {
             console.log('Erreur :' + response.status + response.statusText);
@@ -176,48 +176,57 @@ function initProjet(projets) {
         newProjet.classList.add("grid-item");
         newProjet.innerHTML = `<h4>${titre}</h4> <img src="${imageSrc}"> </img>`;
 
-        // -- Création des overlay pour chaque projet
+        // -- Création de l'overlay pour chaque projet
         const sectionProjets = document.querySelector("#projets");
-        const boxOverlay = document.querySelector("#box-overlay");
-        // const newBoxOverlay = document.createElement("div");
+
+        const newBoxOverlay = document.createElement("div");
+        sectionProjets.appendChild(newBoxOverlay);
+        newBoxOverlay.id = "box-overlay";
+
+        const boxBackground = document.createElement("div");
+        newBoxOverlay.appendChild(boxBackground);
+        boxBackground.id = "box-background";
+        
         const newOverlay = document.createElement("div");
-        sectionProjets.appendChild(newOverlay);
-        // newBoxOverlay.appendChild(newOverlay);
-        // newBoxOverlay.id = "box-overlay";
+        newBoxOverlay.appendChild(newOverlay);
         newOverlay.id = "overlay-projet";
+        
+        const contentOverlay = document.createElement("div");
+        newOverlay.appendChild(contentOverlay);
+        contentOverlay.id = "contenu-overlay";
 
         // Remplissage de l'overlay
         const newTitre = document.createElement("h5");
-        const newSousTitre = document.createElement("h6"); 
+        const newSousTitre = document.createElement("h6");
         const newImage = document.createElement("div");
         const newDescription = document.createElement("p");
         const newBoxLiens = document.createElement("div");
         newBoxLiens.id = "box-liens";
         const newLienProjet = document.createElement("button");
 
-        newOverlay.appendChild(newTitre).innerHTML = titre;
-        newOverlay.appendChild(newSousTitre).innerHTML = sousTitre;
-        newOverlay.appendChild(newImage).innerHTML = `<img src="${imageSrc}"></img>`;
-        newOverlay.appendChild(newDescription).innerHTML = "<bold>Consignes du projet :</bold>" + description;
+        contentOverlay.appendChild(newTitre).innerHTML = titre + '<hr> </hr>';
+        contentOverlay.appendChild(newSousTitre).innerHTML = sousTitre;
+        contentOverlay.appendChild(newImage).innerHTML = `<img src="${imageSrc}"></img>`;
+        contentOverlay.appendChild(newDescription).innerHTML = "<strong>Consignes du projet</strong>" + description;
 
-        if(notation != undefined) {
+        if (notation != undefined) {
             const newNote = document.createElement("p");
-            newOverlay.appendChild(newNote).innerHTML = notation;
+            contentOverlay.appendChild(newNote).innerHTML = notation;
         }
 
-        newOverlay.appendChild(newBoxLiens);
-        newBoxLiens.appendChild(newLienProjet).innerHTML = `<a href="${lienProjet}">Voir le site</a>`;
-        
-        if(lienGit != undefined) {
+        contentOverlay.appendChild(newBoxLiens);
+        newBoxLiens.appendChild(newLienProjet).innerHTML = `<a href="${lienProjet}" target="_blank">Voir le projet</a>`;
+
+        if (lienGit != undefined) {
             const newLienGit = document.createElement("button");
-            newBoxLiens.appendChild(newLienGit).innerHTML = `<a href="${lienGit}">Voir sur GitHub</a>`;
+            newBoxLiens.appendChild(newLienGit).innerHTML = `<a href="${lienGit}" target="_blank">Voir sur GitHub</a>`;
         }
-        
+
         // Event Hover item grille
         hoverProjet(newProjet);
 
         // Event Ouverture / fermeture overlay
-        openOverlay(newProjet, newOverlay, /*newBoxOverlay*/);
+        openOverlay(newProjet, newOverlay, newBoxOverlay, boxBackground);
     });
 }
 
@@ -231,7 +240,7 @@ function hoverProjet($projet) {
         $projet.appendChild(infoBulle);
         infoBulle.innerHTML = "VOIR LE PROJET";
     });
-    
+
     $projet.addEventListener("mouseleave", event => {
         $projet.classList.remove("hover");
         infoBulle.remove();
@@ -239,23 +248,19 @@ function hoverProjet($projet) {
     });
 }
 
-function openOverlay($projet, $overlay, $newBoxOverlay) {
-    // Event Clic sur un projet - apparition de l'overlay
+function openOverlay($projet, $overlay, $newBoxOverlay, $boxBackground) {
     $projet.addEventListener("click", event => {
-        // $newBoxOverlay.style.display = 'flex';
+        $boxBackground.style.display = 'flex';
+        $newBoxOverlay.style.display = 'flex';
         $overlay.style.display = 'flex';
+        body.style.overflowY = 'hidden'; 
 
-        // Fermeture de l'overlay si clic dehors
-        setTimeout(() => {
-            document.querySelector('body').addEventListener("click", function hide(event) {
-                if(event.target != $overlay) {
-                    $overlay.style.display = 'none';
-                    // $newBoxOverlay.style.display = 'none';
-                }
-            });
-            $overlay.style.display = 'flex';
-            // $newBoxOverlay.style.display = 'flex';
-        }, 100);
+        $boxBackground.addEventListener("click", event => {
+            $boxBackground.style.display = 'none';
+            $newBoxOverlay.style.display = 'none';
+            $overlay.style.display = 'none';
+            body.style.overflowY = 'scroll'; 
+        });
     });
 }
 

@@ -1,10 +1,10 @@
 [
     {
         "titre": "Chalets et Caviar - Site WordPress",
-        "sousTitre": "Site de vente et de location de chalets de luxe",
+        "sousTitre": "Site vitrine de vente et de location de chalets de luxe",
         "imageSrc": "./media/img/img_chalets_caviar.png",
-        "description": "<br></br>Bravo ! Vous venez de vous lancer en tant que développeur freelance et vous avez décroché votre premier contrat.<br><br>Votre client ? L’agence immobilière “Chalets et caviar” de Courchevel.<br><br>Cette agence possède une quinzaine de chalets de luxe à la vente et une vingtaine en location.<br><br>Cependant, elle ne possède pas encore de site web pour promouvoir la vente et la location de ses chalets. C’est pour cette raison qu’elle fait appel à vous !<br><br> Vous allez devoir : <ul> <li>Sélectionner un thème Wordpress adapté aux besoins du client et l'intégrer</li> <li>Adapter un thème Wordpress pour respecter les exigences du client</li> <li>Rédiger une documentation technique à l'intention d'utilisateurs non spécialistes</li> </ul>",
-        "notation": "Projet Validé. <br><br> Mot du jury : Très bon projet réalisé par Nicolas, ce dernier répond aux attentes du cahier des charges.",
+        "description": "<br></br>Bravo ! Vous venez de vous lancer en tant que développeur freelance et vous avez décroché votre premier contrat.<br><br>Votre client ? L’agence immobilière “Chalets et caviar” de Courchevel.<br><br>Cette agence possède une quinzaine de chalets de luxe à la vente et une vingtaine en location.<br><br>Cependant, elle ne possède pas encore de site web pour promouvoir la vente et la location de ses chalets. C’est pour cette raison qu’elle fait appel à vous !<br><br> <strong>Vous allez devoir :</strong> <ul> <li>Sélectionner un thème Wordpress adapté aux besoins du client et l'intégrer</li> <li>Adapter un thème Wordpress pour respecter les exigences du client</li> <li>Rédiger une documentation technique à l'intention d'utilisateurs non spécialistes</li> </ul>",
+        "notation": "<bold>Projet Validé ✅</bold> <br><br> <strong>Mot du jury :</strong> “Très bon projet réalisé par Nicolas, ce dernier répond aux attentes du cahier des charges.” ",
         "linkProjet": "https://chalets-et-caviar-nicolas-sartelet-oc.000webhostapp.com/"
     },
     {
@@ -12,32 +12,32 @@
         "sousTitre": "Analyse des besoins web d'un client",
         "imageSrc": "./media/img/img_festival_films.png",
         "description": "<br><br>lorem ipsum",
-        "notation": "Projet Validé",
-        "linkProjet": ""
+        "notation": "<bold>Projet Validé ✅</bold> <br><br> <strong>Mot du jury :</strong> “blabla.” ",
+        "linkProjet": "https://drive.google.com/file/d/1qZSkDrGmsHJ0PycAzBFfmYvEQ7LcTcYv/view?usp=sharing"
     },
     {
         "titre": "Conception UML/SQL - ExpressFood",
         "sousTitre": "Solution technique d'une application de restauration en ligne",
         "imageSrc": "./media/img/img_expressfood_uml.png",
         "description": "<br><br>lorem ipsum",
-        "notation": "Projet Validé",
-        "linkProjet": ""
+        "notation": "<bold>Projet Validé ✅</bold> <br><br> <strong>Mot du jury :</strong> “blabla.” ",
+        "linkProjet": "https://drive.google.com/file/d/14ukpWRlouQ3yWqJd48vBZhtG0jUHq0H5/view?usp=sharing"
     },
     {
         "titre": "Générateur de phrases aléatoires",
         "sousTitre": "Création d'un générateur de phrases drôles en JS",
         "imageSrc": "./media/img/img_generateur.png",
         "description": "<br><br>lorem ipsum",
-        "notation": "Projet Validé",
-        "linkProjet": "",
-        "linkGithub": ""
+        "notation": "<bold>Projet Validé ✅</bold> <br><br> <strong>Mot du jury :</strong> “blabla.” ",
+        "linkProjet": "https://generateur-de-citations-nicolas-sartelet.netlify.app/",
+        "linkGithub": "https://github.com/Nicodev17/Generateur_de_citations"
     },
     {
         "titre": "Chilvary War - Jeu de plateau",
         "sousTitre": "Création d'un jeu de combat tour par tour en JS",
         "imageSrc": "./media/img/img_chivalry_war.png",
         "description": "<br><br>lorem ipsum",
-        "notation": "Projet Validé",
+        "notation": "<bold>Projet Validé ✅</bold> <br><br> <strong>Mot du jury :</strong> “blabla.” ",
         "linkProjet": "https://chivalry-war-nicolas-sartelet.netlify.app/",
         "linkGithub": "https://github.com/Nicodev17/Jeu_JS"
     },
@@ -46,18 +46,18 @@
         "sousTitre": "Site d'avis sur les restaurants proches de l'utilisateur",
         "imageSrc": "./media/img/img_vicino_resto.png",
         "description": "<br><br>lorem ipsum",
-        "notation": "Projet Validé",
-        "linkProjet": "",
-        "linkGithub": ""
+        "notation": "<bold>Projet Validé ✅</bold> <br><br> <strong>Mot du jury :</strong> “blabla.” ",
+        "linkProjet": "https://vicino-resto.netlify.app/",
+        "linkGithub": "https://github.com/Nicodev17/Site_avis_de_restaurants"
     },
     {
         "titre": "Todo-List App - Reprise de projet",
         "sousTitre": "Reprise et amélioration d'un projet existant et intégration de tests",
         "imageSrc": "./media/img/img_todos.png",
         "description": "<br><br>lorem ipsum",
-        "notation": "Projet Validé",
+        "notation": "<bold>Projet Validé ✅</bold> <br><br> <strong>Mot du jury :</strong> “blabla.” ",
         "linkProjet": "",
-        "linkGithub": ""
+        "linkGithub": "https://github.com/Nicodev17/Todo_list_app_recovery"
     },
     {
         "titre": "Mini Synthétiseur en JS",
