@@ -92,7 +92,7 @@ const barreUi = document.querySelector("#progress9");
 function changeProgress() {
     containerBarre.forEach((element, index) => {
         setTimeout(() => { element.style.opacity = '1'; }, Number((index + '00') / 1.2));
-        setTimeout(() => { logosComp[index].style.opacity = '1'; }, Number((index + '00') / 1.2));
+        setTimeout(() => { logosComp[index].style.opacity = '1'; }, Number((index + '00') / 1.1));
     });
 
     barreHtml.style.width = '80%';
@@ -168,6 +168,7 @@ function initProjet(projets) {
         const notation = element.notation;
         const lienProjet = element.linkProjet;
         const lienGit = element.linkGithub;
+        const compList = element.listeComp;
 
         // -- Création des projets dans le DOM (grille)
         const grilleProjets = document.querySelector("#grid-projets");
@@ -201,22 +202,23 @@ function initProjet(projets) {
         newBoxClose.id = "box-close-pop";
         const newSousTitre = document.createElement("h6");
         const newImage = document.createElement("div");
+        newImage.id = 'box-image-overlay';
         const newDescription = document.createElement("p");
+        const newCompList = document.createElement("p");
+        newCompList.id = "competences-projet";
         const newBoxLiens = document.createElement("div");
         newBoxLiens.id = "box-liens";
         const newLienProjet = document.createElement("button");
 
+        // Croix fermeture
         newOverlay.appendChild(newBoxClose).innerHTML = `<img src="media/img/close.png"></img>`;
-        contentOverlay.appendChild(newTitre).innerHTML = titre + '<hr> </hr>';
-        contentOverlay.appendChild(newSousTitre).innerHTML = sousTitre;
+        // Titre
+        contentOverlay.appendChild(newTitre).innerHTML = titre;
+        // Sous-titre
+        contentOverlay.appendChild(newSousTitre).innerHTML = sousTitre + '<hr> </hr>';
+        // Image d'illustration
         contentOverlay.appendChild(newImage).innerHTML = `<img src="${imageSrc}"></img>`;
-        contentOverlay.appendChild(newDescription).innerHTML = "<strong>Consignes du projet</strong>" + description;
-
-        if (notation != undefined) {
-            const newNote = document.createElement("p");
-            contentOverlay.appendChild(newNote).innerHTML = notation;
-        }
-
+        // Liens projet
         contentOverlay.appendChild(newBoxLiens);
         newBoxLiens.appendChild(newLienProjet).innerHTML = `<a href="${lienProjet}" target="_blank">Voir le projet</a>`;
 
@@ -225,9 +227,22 @@ function initProjet(projets) {
             newBoxLiens.appendChild(newLienGit).innerHTML = `<a href="${lienGit}" target="_blank">Voir sur GitHub</a>`;
         }
 
+        contentOverlay.appendChild(newDescription).innerHTML = "<strong>But du projet</strong>" + description;
+
+        // Compétences du projet
+        if (compList != undefined) {
+            contentOverlay.appendChild(newCompList).innerHTML = "<strong>Compétences visées</strong>" + compList;
+        }
+        
+        // Notation + jury
+        if (notation != undefined) {
+            const newNote = document.createElement("p");
+            contentOverlay.appendChild(newNote).innerHTML = notation;
+        }
+
+        // -- Lancement des fonctions liées au pop up
         // Event Hover item grille
         hoverProjet(newProjet);
-
         // Event Ouverture / fermeture overlay
         openOverlay(newProjet, newOverlay, newBoxOverlay, boxBackground, newBoxClose);
     });
@@ -260,13 +275,15 @@ function openOverlay($projet, $overlay, $newBoxOverlay, $boxBackground, $boxClos
         body.style.overflowY = 'hidden'; 
 
         $boxBackground.addEventListener("click", event => {
+            $overlay.scrollTop = 0;
             $boxBackground.style.display = 'none';
             $newBoxOverlay.style.display = 'none';
             $overlay.style.display = 'none';
-            body.style.overflowY = 'scroll'; 
+            body.style.overflowY = 'scroll';
         });
         
         $boxClose.addEventListener("click", event => {
+            $overlay.scrollTop = 0;
             $boxBackground.style.display = 'none';
             $newBoxOverlay.style.display = 'none';
             $overlay.style.display = 'none';
