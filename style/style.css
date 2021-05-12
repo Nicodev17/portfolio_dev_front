@@ -128,7 +128,8 @@ nav #box-hamburger {
     height: 50px;
     border: none;
     position: relative;
-    background-color: #29314400;   
+    background-color: #29314400;
+    border-radius: 10px;  
     cursor: pointer;
 }
 
@@ -148,7 +149,7 @@ nav #box-hamburger {
     width: 100%;
     height: 15%;
     background: rgb(255, 255, 255);
-    border: 2px solid #2C3E56;
+    border: 2px solid #2c3e56;
 }
 
 #box-hamburger .ligne:nth-child(1) {
@@ -284,8 +285,8 @@ h2 {
 
 #logo circle.visible {
     fill: var(--red-color);
-    cx: 200; /* axe vertical */
-    cy: 440;  /* axe horizontal */
+    cx: 200; /* axe horizontal */
+    cy: 440;  /* axe vertical */
     r: 130; /* rayon */
     opacity: 1;
 }
@@ -1133,7 +1134,7 @@ footer {
 
 #box-left-footer {
     width: 50%;
-    /* border: 2px solid white; */
+    border: 2px solid white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1141,7 +1142,7 @@ footer {
 
 #box-info-contact {
     width: 50%;
-    /* border: 2px solid white; */
+    border: 2px solid white;
     font-family: var(--main-font);
     color: var(--text-color);
 }
@@ -1189,7 +1190,7 @@ footer {
 
 #box-right-footer {
     width: 50%;
-    /* border: 2px solid violet; */
+    border: 2px solid violet;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1204,8 +1205,137 @@ footer {
 
 /* _______________ MEDIA QUERIES RESPONSIVE _______________ */
 
-/* à déplacer dans les médias queries par la suite */
+/* ---- FORMAT MOBILE ---- */
 @media  screen and (max-width: 700px) {
+
+    /* -- Section HOME */
+    h1 {
+        font-size: 1.25em;
+        font-weight: 300;
+    }
+
+    h2 {
+        margin-top: 25px;
+        font-size: 1.7em;
+        font-weight: 200;
+    }
+
+    #logo {
+        transform: translateY(-247px);
+    }
+
+    /* -- MENU dépliant */
+    #menu {
+        width: 70%;
+    }
+    
+    #container-liens a {
+        font-size: 1.2em;
+    }
+
+    /* -- Section à propos */
+    #a-propos {
+        flex-direction: column;
+    }
+
+    #box-titre {
+        align-items: center;
+        align-self: center;
+    }
+
+    .trait-titre {
+        align-self: flex-start;
+    }
+
+    #box-texte-about {
+        width: 70%;
+        margin-left: 0;
+        margin-top: 30px;
+    }
+    
+    #box-texte-about p {
+        margin-bottom: 25px;
+        font-size: 1.1em;
+        font-weight: 400;
+        line-height: 1.3;
+    }
+
+    #box-texte-about p strong {
+        font-weight: 500;
+    }
+
+    /* -- Section Compétences */
+    
+    /* --- Box contenu comp ---*/
+    #box-items-comp {
+        margin-top: 50px;
+        width: 100%;
+        height: 400px;
+    }
+
+    /* --- Box contenu comp unique ---*/
+    .box-content-comp {
+        width: 70%;
+        margin-right: -80px;
+    }
+
+    /* Texte dans la barre de comp */
+    .barre-container span {
+        padding: 8px 25px;
+        font-weight: 400;
+        font-size: 0.8em;
+    }
+
+    #box-logo-comp {
+        margin-left: 10px;
+        /* border: 2px solid white; */
+    }
+    
+    #box-logo-comp img {
+        width: 80px;
+        height: auto;
+    }
+
+    /* -- Section PROJETS */
+
+    /* --- Barre de nav projets ---*/
+    #navbar-projets {
+        margin-top: 40px;
+        width: 90%;
+        height: 40px;
+        border-radius: 15px;
+    }
+
+    #navbar-projets a {
+        width: 10%;
+        height: 40px;
+        font-size: 0.8em;
+        font-weight: 500;
+        padding: 0 22px 0 22px;
+    }
+
+    #navbar-projets a:last-child {
+        padding: 0 22px 0 15px;
+    }
+
+    #navbar-projets a:hover {
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.075);
+    }
+
+    #navbar-projets a.active {
+        background: rgb(208, 208, 208);
+    }
+
+    #navbar-projets a.active:last-child {
+        border-radius: 0 15px 15px 0;
+    }
+
+    #navbar-projets a.active:first-child {
+        border-radius: 15px 0 0 15px;
+    }
+
+    /* -- Boutons dans le pop up projet */
     #overlay-projet #box-liens {
         flex-direction: column;
     }

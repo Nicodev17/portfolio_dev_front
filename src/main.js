@@ -98,11 +98,11 @@ function changeProgress() {
     barreHtml.style.width = '80%';
     setTimeout(() => { barreCss.style.width = '75%'; }, 150);
     setTimeout(() => { barreJs.style.width = '70%'; }, 300);
-    setTimeout(() => { barreReact.style.width = '40%'; }, 450);
+    setTimeout(() => { barreReact.style.width = '45%'; }, 450);
     setTimeout(() => { barreJquery.style.width = '80%'; }, 600);
     setTimeout(() => { barreJasmine.style.width = '70%'; }, 750);
     setTimeout(() => { barreUml.style.width = '80%'; }, 900);
-    setTimeout(() => { barreWordpress.style.width = '50%'; }, 1050);
+    setTimeout(() => { barreWordpress.style.width = '53%'; }, 1050);
     setTimeout(() => { barreUi.style.width = '60%'; }, 1200);
 };
 
@@ -233,7 +233,7 @@ function initProjet(projets) {
         if (compList != undefined) {
             contentOverlay.appendChild(newCompList).innerHTML = "<strong>Compétences visées</strong>" + compList;
         }
-        
+
         // Notation + jury
         if (notation != undefined) {
             const newNote = document.createElement("p");
