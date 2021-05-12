@@ -1133,16 +1133,16 @@ footer {
 }
 
 #box-left-footer {
+    /* border: 2px solid white; */
     width: 50%;
-    border: 2px solid white;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #box-info-contact {
-    width: 50%;
-    border: 2px solid white;
+    /* border: 2px solid white; */
+    width: 70%;
     font-family: var(--main-font);
     color: var(--text-color);
 }
@@ -1189,14 +1189,15 @@ footer {
 }
 
 #box-right-footer {
+    /* border: 2px solid violet; */
     width: 50%;
-    border: 2px solid violet;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #box-social {
+    display: none; /* Temporaire */
     width: 50%;
     /* border: 2px solid violet; */
     font-family: var(--main-font);
