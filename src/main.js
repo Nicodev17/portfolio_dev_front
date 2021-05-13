@@ -292,3 +292,15 @@ function openOverlay($projet, $overlay, $newBoxOverlay, $boxBackground, $boxClos
     });
 }
 
+function scrollToTop() {
+    const arrowUp = document.querySelector('#box-arrow img');
+    
+    arrowUp.addEventListener('click', event => {
+        window.scroll({
+            top: 0, 
+            left: 0, 
+            behavior: 'smooth'
+          });
+    });
+}
+scrollToTop();

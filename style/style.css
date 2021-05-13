@@ -1133,8 +1133,9 @@ footer {
 }
 
 #box-left-footer {
-    /* border: 2px solid white; */
+    /* border: 2px solid green; */
     width: 50%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1191,6 +1192,7 @@ footer {
 #box-right-footer {
     /* border: 2px solid violet; */
     width: 50%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1199,10 +1201,25 @@ footer {
 #box-social {
     display: none; /* Temporaire */
     width: 50%;
-    /* border: 2px solid violet; */
+    /* border: 2px solid red; */
     font-family: var(--main-font);
     color: var(--text-color);
 }
+
+#box-arrow {
+    /* border: 2px solid burlywood; */
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 25px 25px 0;
+}
+
+#box-arrow img {
+    width: 60px;
+    height: auto;
+    cursor: pointer;
+}
+
 
 /* _______________ MEDIA QUERIES RESPONSIVE _______________ */
 
