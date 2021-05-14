@@ -12,7 +12,6 @@ const vagues = document.querySelector('#vagues');
 const title = document.querySelector('h1');
 const softSkills = document.querySelectorAll('.item-soft-skills');
 const cercleProjets = document.querySelector('#cercle-projet');
-const filtreProjets = document.querySelectorAll('#navbar-projets a');
 
 // ---------- Evenements box menu ----------
 boxHamburger.addEventListener('click', event => {
@@ -92,7 +91,7 @@ const barreUi = document.querySelector("#progress9");
 function changeProgress() {
     containerBarre.forEach((element, index) => {
         setTimeout(() => { element.style.opacity = '1'; }, Number((index + '00') / 1.2));
-        setTimeout(() => { logosComp[index].style.opacity = '1'; }, Number((index + '00') / 1.1));
+        setTimeout(() => { logosComp[index].style.opacity = '1'; }, Number((index + '00') / 1.2));
     });
 
     barreHtml.style.width = '80%';
@@ -107,49 +106,15 @@ function changeProgress() {
 };
 
 // ---------- Partie Projets ----------
-function filtrageProjets() {
-    // --- Barre de filtrage des projets ---
-    filtreProjets.forEach(element => {
-        element.addEventListener('click', () => {
-            let elActif = document.querySelector('#navbar-projets .active');
-            elActif.classList.remove('active');
-            element.classList.add('active');
 
-            // Temporaire : après il faudra mettre tous les projets dans un tableau que l'on filtrera à a chaque clic sur un filtre
-            // switch (element.id) {
-            //     case 'filtre-all':
-            //         console.log('filtre all activé');
-            //         break;
-            //     case 'filtre-wordpress':
-            //         console.log('filtre wordpress activé');
-            //         const wordpressEl = document.querySelector('.grid-item.wordpress');
-            //         wordpressEl.style.border = '2px solid red';
-            //         break;
-            //     case 'filtre-htmlcss':
-            //         console.log('filtre html css activé');
-
-            //         break;
-            //     case 'filtre-js':
-            //         console.log('filtre JS activé');
-
-            //         break;
-            //     case 'filtre-react':
-            //         console.log('filtre react activé');
-
-            //         break;
-            //   }
-        });
-    });
-}
-filtrageProjets();
-
-// Récupération des infos des projets
+// Récupération des infos de chaque projets
 function getProjets() {
     fetch('src/projets.json').then((response) => {
         if (response.ok) {
             response.json().then((json) => {
                 let reponse = json;
                 initProjet(reponse);
+                filtrageProjets(reponse);
             });
         } else {
             console.log('Erreur :' + response.status + response.statusText);
@@ -158,8 +123,45 @@ function getProjets() {
 }
 getProjets();
 
-function initProjet(projets) {
-    projets.forEach(element => {
+// --- Barre de filtrage des projets ---
+function filtrageProjets(projets) {
+    const filtreProjets = document.querySelectorAll('#navbar-projets a');
+
+    filtreProjets.forEach(element => {
+        element.addEventListener('click', () => {
+            let elActif = document.querySelector('#navbar-projets .active');
+            elActif.classList.remove('active');
+            element.classList.add('active');
+
+            initProjet(projets, element.id);
+        });
+    });
+
+}
+
+function initProjet(projets, filtreActif) {
+    let arrayProjets = projets;
+
+    // Vidage de la grille précédente
+    document.querySelector("#grid-projets").innerHTML = "";
+
+    if(filtreActif !== undefined) {
+        // Filtrage des projets si un filtre a été activé
+        arrayProjets = arrayProjets.filter(element => element.tags.includes(filtreActif));
+    }
+    
+    // Si aucun projet visible sur le filtre
+    const zoneMsg =  document.querySelector("#msg-projet");
+    zoneMsg.style.display = 'none';
+    zoneMsg.style.opacity = '0';
+
+    if(arrayProjets.length === 0) {
+        zoneMsg.style.display = 'flex';
+        setTimeout(() => { zoneMsg.style.opacity = '1'; }, 50);
+        zoneMsg.innerHTML = "<p>Des projets arrivent très bientôt sur cette techno ! 🚀</p>";
+    }
+
+    arrayProjets.forEach((element, index) => {
         //  -- Info des projets
         const titre = element.titre;
         const sousTitre = element.sousTitre;
@@ -176,6 +178,12 @@ function initProjet(projets) {
         grilleProjets.appendChild(newProjet);
         newProjet.classList.add("grid-item");
         newProjet.innerHTML = `<h4>${titre}</h4> <img src="${imageSrc}"> </img>`;
+
+        // Apparition des item progressive
+        let gridItem = document.querySelectorAll(".grid-item");
+        gridItem.forEach(element => {
+            setTimeout(() => { element.style.opacity = "1"; }, 100);
+        });
 
         // -- Création de l'overlay pour chaque projet
         const sectionProjets = document.querySelector("#projets");

@@ -694,7 +694,7 @@ h2 {
     margin-bottom: 25px;
     background: var(--text-color);
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 1s ease-in-out;
   }
   
 .barre-container .progress {
@@ -720,7 +720,7 @@ h2 {
     height: auto;
     margin: -6px 10px 0 0;
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 1s ease-in-out;
 }
 
 /* _______________ PROJETS _______________ */
@@ -844,6 +844,25 @@ h2 {
     transition: background-color 0.3s ease-in-out;
 }
 
+/* Message qui s'affiche pour le projet à venir */
+#msg-projet {
+    display: none;
+    margin-top: 50px;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#msg-projet p {
+    font-family: var(--main-font);
+    color: var(--main-color-bis);
+    font-size: 1.2em;
+    text-align: center;
+}
+
 /* --- Grille des projets --- */
 #grid-projets {
     /* border: 2px solid violet; */
@@ -868,6 +887,8 @@ h2 {
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
 }
 
 .grid-item h4 {

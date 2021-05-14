@@ -1,5 +1,6 @@
 [
     {
+        "tags": "[all, wordpress]",
         "titre": "Chalets et Caviar - Site WordPress",
         "sousTitre": "Site vitrine de vente et de location de chalets de luxe",
         "imageSrc": "./media/img/img_chalets_caviar.png",
@@ -9,6 +10,7 @@
         "linkProjet": "https://chalets-et-caviar-nicolas-sartelet-oc.000webhostapp.com/"
     },
     {
+        "tags": "[all, htmlcss]",
         "titre": "Site de Festival de Films",
         "sousTitre": "Analyse des besoins web d'un client",
         "imageSrc": "./media/img/img_festival_films.png",
@@ -18,6 +20,7 @@
         "linkProjet": "https://drive.google.com/file/d/1qZSkDrGmsHJ0PycAzBFfmYvEQ7LcTcYv/view?usp=sharing"
     },
     {
+        "tags": "[all]",
         "titre": "Conception UML/SQL - ExpressFood",
         "sousTitre": "Solution technique d'une application de restauration en ligne",
         "imageSrc": "./media/img/img_expressfood_uml.png",
@@ -27,6 +30,7 @@
         "linkProjet": "https://drive.google.com/file/d/14ukpWRlouQ3yWqJd48vBZhtG0jUHq0H5/view?usp=sharing"
     },
     {
+        "tags": "[all, htmlcss, js]",
         "titre": "Générateur de phrases aléatoires",
         "sousTitre": "Création d'un générateur de phrases drôles en JS",
         "imageSrc": "./media/img/img_generateur.png",
@@ -37,6 +41,7 @@
         "linkGithub": "https://github.com/Nicodev17/Generateur_de_citations"
     },
     {
+        "tags": "[all, htmlcss, js]",
         "titre": "Chilvary War - Jeu de plateau",
         "sousTitre": "Création d'un jeu de combat tour par tour en JS",
         "imageSrc": "./media/img/img_chivalry_war.png",
@@ -47,6 +52,7 @@
         "linkGithub": "https://github.com/Nicodev17/Jeu_JS"
     },
     {
+        "tags": "[all, htmlcss, js]",
         "titre": "Vicino Resto - Avis de restaurants",
         "sousTitre": "Site d'avis sur les restaurants proches de l'utilisateur",
         "imageSrc": "./media/img/img_vicino_resto.png",
@@ -57,6 +63,7 @@
         "linkGithub": "https://github.com/Nicodev17/Site_avis_de_restaurants"
     },
     {
+        "tags": "[all, js]",
         "titre": "Todo-List App - Reprise de projet",
         "sousTitre": "Reprise et amélioration d'un projet existant et intégration de tests",
         "imageSrc": "./media/img/img_todos.png",
@@ -67,6 +74,7 @@
         "linkGithub": "https://github.com/Nicodev17/Todo_list_app_recovery"
     },
     {
+        "tags": "[all, js]",
         "titre": "Mini Synthétiseur en JS",
         "sousTitre": "Développement d'un mini piano avec la web audio API",
         "imageSrc": "./media/img/mini_synth.png",
