@@ -801,7 +801,7 @@ h2 {
 #bateau {
     position: absolute;
     transform: translate(80px, 17px);
-    z-index: 4;
+    z-index: 3;
 }
 
 #bateau img {
