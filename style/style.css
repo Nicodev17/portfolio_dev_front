@@ -237,6 +237,7 @@ nav #box-hamburger {
 }
 
 h1 {
+    z-index: -1;
     opacity: 0;
     margin-bottom: 20px;
     font-size: 1.25em;
@@ -254,6 +255,7 @@ h1.visible {
 }
 
 h2 {
+    z-index: -1;
     margin-top: 40px;
     color: rgb(218, 218, 218);
     font-family: var(--second-font);
@@ -264,15 +266,16 @@ h2 {
 }
 
 #logo {
+    /* border: 3px solid white; */
     z-index: -1;
     position: absolute;
     transform: translateY(-235px);
-    /* border: 3px solid white; */
 }
 
 /* Forme */
 #logo svg {
-    width: 400px;
+    /* border: 2px solid violet; */
+    width: 360px;
     height: 460px;
     background: transparent;
 }
@@ -285,7 +288,7 @@ h2 {
 
 #logo circle.visible {
     fill: var(--red-color);
-    cx: 200; /* axe horizontal */
+    cx: 180; /* axe horizontal */
     cy: 440;  /* axe vertical */
     r: 130; /* rayon */
     opacity: 1;
@@ -732,7 +735,7 @@ h2 {
     align-items: center;
     flex-direction: column;
     padding-top: 90px;
-    /* background-color: white; */
+    /* background-color: blue; */
     /* border: 5px solid red; */
 }
 
@@ -1337,6 +1340,11 @@ footer {
     }
 
     /* -- Section Compétences */
+
+    .trait-titre-3 {
+        width: 60px;
+        height: 4px;
+    }
     
     /* --- Box contenu comp ---*/
     #box-items-comp {
