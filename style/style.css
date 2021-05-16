@@ -1224,12 +1224,14 @@ footer {
     bottom: 0;
     right: 0;
     margin: 0 25px 25px 0;
+    outline: none;
 }
 
 #box-arrow img {
     width: 60px;
     height: auto;
     cursor: pointer;
+    outline: none;
 }
 
 
