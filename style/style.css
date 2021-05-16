@@ -1263,6 +1263,39 @@ footer {
         transform: translateY(-247px);
     }
 
+    /* Nuages*/
+    #cloud-box img:nth-child(1) {
+        top: 9%;
+        left: 8%;
+    }
+
+    @keyframes bounce1 {
+        from {top: 9%;}
+        50%  {top: 7.5%;}
+        to   {top: 9%;}
+    }
+
+    #cloud-box img:nth-child(3) {
+        top: 12%;
+        left: 36%;
+    }
+
+    @keyframes bounce3 {
+        from {top: 12%;}
+        50%  {top: 10.5%;}
+        to   {top: 12%;}
+    }
+
+    #cloud-box img:nth-child(5) {
+        top: 5%;
+        left: 68%;
+    }
+
+    #cloud-box img:nth-child(6) {
+        top: 15%;
+        left: 77%;
+    }
+
     /* -- MENU dépliant */
     #menu {
         width: 70%;
