@@ -1265,25 +1265,25 @@ footer {
 
     /* Nuages*/
     #cloud-box img:nth-child(1) {
-        top: 9%;
+        top: 8%;
         left: 8%;
     }
 
     @keyframes bounce1 {
-        from {top: 9%;}
-        50%  {top: 7.5%;}
-        to   {top: 9%;}
+        from {top: 8%;}
+        50%  {top: 6.5%;}
+        to   {top: 8%;}
     }
 
     #cloud-box img:nth-child(3) {
-        top: 12%;
+        top: 10%;
         left: 36%;
     }
 
     @keyframes bounce3 {
-        from {top: 12%;}
-        50%  {top: 10.5%;}
-        to   {top: 12%;}
+        from {top: 10%;}
+        50%  {top: 8.5%;}
+        to   {top: 10%;}
     }
 
     #cloud-box img:nth-child(5) {
@@ -1293,7 +1293,7 @@ footer {
 
     #cloud-box img:nth-child(6) {
         top: 15%;
-        left: 77%;
+        left: 75%;
     }
 
     /* -- MENU dépliant */
