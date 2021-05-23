@@ -995,7 +995,6 @@ h2 {
     align-items: center;
     flex-direction: column;
     padding: 0px 0px 60px 0px;
-    
 }
 
 /*  Titre overlay */
@@ -1224,14 +1223,14 @@ footer {
     bottom: 0;
     right: 0;
     margin: 0 25px 25px 0;
-    outline: none;
+    outline-style: none;
 }
 
 #box-arrow img {
     width: 60px;
     height: auto;
     cursor: pointer;
-    outline: none;
+    outline-style: none;
 }
 
 
@@ -1405,10 +1404,66 @@ footer {
         border-radius: 15px 0 0 15px;
     }
 
-    /* Overlay Projets */
+    /* --- Overlay Projets --- */
     #box-background {
         background: rgba(250, 250, 250, 0.425);
     }
+
+    #contenu-overlay {
+        width: 70%;
+        padding: 0px 0px 40px 0px;
+    }
+
+    /*  Titre overlay */
+    #overlay-projet h5 {
+        font-size: 22px;
+    }
+    
+    /*  Sous-titre overlay */
+    #overlay-projet h6 {
+        font-size: 13px;
+    }
+    
+    /* Croix de fermeture overlay */
+    #box-close-pop {
+        margin: 10px 40px 0 0;
+    }
+    
+    #box-close-pop img {
+        width: 30px;
+    }
+    
+    /* Texte descriptif de l'overlay */
+    #overlay-projet p {
+        font-size: 1em;
+    }
+    
+    /* Titres de paragraphes */
+    #overlay-projet p strong {
+        font-size: 1.1em;
+    }
+    
+    /* Liste compétences projet */
+    #overlay-projet p ul {
+        margin: 25px 0 -20px 0;
+    }
+
+    #overlay-projet p li{
+        margin-bottom: 20px;
+    }
+    
+    #competences-projet li {
+        list-style-type: "🛠  ";
+    }
+    
+    /* 'Projet validé' */
+    #overlay-projet p bold {
+        color: var(--red-color);
+        font-weight: 500;
+        opacity: 0.9;
+    }
+
+    /* --------------------------------------- */
 
     /* -- Boutons dans le pop up projet */
     #overlay-projet #box-liens {
