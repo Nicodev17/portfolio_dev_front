@@ -12,7 +12,7 @@
     {
         "tags": "[all, htmlcss]",
         "titre": "Site de Festival de Films",
-        "sousTitre": "Analyse des besoins web d'un client",
+        "sousTitre": "Analyse des besoins web d'un client et proposition d'une solution",
         "imageSrc": "./media/img/img_festival_films.png",
         "description": "<br><br>Analyser les besoins et proposer une solution web pour une association qui vient juste d'être créée et qui a besoin d'un support de communication en ligne pour son festival afin d'annoncer les films projetés et de recueillir les réservations, le tout avec un budget limité et aucune connaissance technique. <br><br> Intégrer une première maquette du site en HTML / CSS.",
         "listeComp": "<ul><li>Choisir une solution technique adaptée parmi les solutions existantes si cela est pertinent</li> <li>Analyser un cahier des charges</li> <li>Lister les fonctionnalités demandées par un client</li> <li>Rédiger les spécifications détaillées du projet</li></ul>",
@@ -65,7 +65,7 @@
     {
         "tags": "[all, js]",
         "titre": "Todo-List App - Reprise de projet",
-        "sousTitre": "Reprise et amélioration d'un projet existant et intégration de tests",
+        "sousTitre": "Amélioration d'un projet existant et intégration de tests",
         "imageSrc": "./media/img/img_todos.png",
         "description": "<br><br>Reprise d'un projet de développement d'une Todo list en JavaScript (développé en structure MVC), nettoyage du code, identification et suppression des bugs, ajout de tests avec Jasmine et audit de la performance du site en comparaison avec une appplication concurrente.",
         "listeComp": "<ul> <li>Reprendre en main un projet JavaScript existant</li>  <li>Optimiser les performances d'un projet à l'aide des DevTools</li> <li>Mettre en œuvre des tests unitaires et fonctionnels dans une application web</li> </ul>",
