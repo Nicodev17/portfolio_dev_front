@@ -81,7 +81,7 @@
         "description": "<br><br> Création d'un piano en JavaScript utilisant la web audio API de JS et les paramètres de l'oscillateur. Utilisation des concepts de gestion d'événements JS avancés avec association du clavier",
         "linkProjet": "",
         "linkGithub": ""
-    }
+    },
     {
         "tags": "[all, js, react]",
         "titre": "Jungle House - vente de plantes",
