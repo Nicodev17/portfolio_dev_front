@@ -87,7 +87,7 @@
         "titre": "Jungle House - vente de plantes",
         "sousTitre": "Développement d'un site de vente de plantes avec React",
         "imageSrc": "./media/img/plant_project.jpg",
-        "description": "<br><br> Création d'un site de vente de plantes en lignes avec React JS, possibilité d'ajouter des plantes au panier, de le vider, de consulter les besoins de chaque plantes et de filtrer la liste des plantes recherchées",
+        "description": "<br><br> Création d'un site de vente de plantes en ligne avec React JS, possibilité d'ajouter des plantes au panier, de le vider, de consulter les besoins de chaque plantes et de filtrer la liste des plantes recherchées",
         "linkProjet": "https://jungle-house.netlify.app",
         "linkGithub": "https://github.com/Nicodev17/la-maison-jungle"
     }
