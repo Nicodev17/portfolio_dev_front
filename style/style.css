@@ -265,32 +265,28 @@ h2 {
     letter-spacing: 2px;
 }
 
-#logo {
+#sun-box {
     /* border: 3px solid white; */
     z-index: -1;
     position: absolute;
-    transform: translateY(-235px);
+    width: auto;
+    height: 350px;
+    transform: translateY(-180px);
+    overflow: hidden;
 }
 
-/* Forme */
-#logo svg {
-    /* border: 2px solid violet; */
-    width: 360px;
-    height: 460px;
-    background: transparent;
-}
-
-#logo circle {
-    cy: 550; /* axe horizontal */
+#sun {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background-color: var(--red-color);
+    margin: 200px 0 0 0;
     opacity: 0;
-    transition: cy 1s ease-in-out, opacity 1.5s ease-in-out; 
+    transition: y 0.9s ease-in-out, opacity 1.5s ease-in-out;
 }
 
-#logo circle.visible {
-    fill: var(--red-color);
-    cx: 180; /* axe horizontal */
-    cy: 440;  /* axe vertical */
-    r: 130; /* rayon */
+#sun.visible {
     opacity: 1;
 }
 
