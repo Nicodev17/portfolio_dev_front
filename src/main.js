@@ -7,7 +7,7 @@ const boxHamburger = document.querySelector('#box-hamburger');
 const menu = document.querySelector('#menu');
 const liens = document.querySelectorAll('#container-liens a');
 const traitLien = document.querySelectorAll('.trait');
-const logo = document.querySelector('#logo circle');
+const sun = document.querySelector('#sun');
 const vagues = document.querySelector('#vagues');
 const title = document.querySelector('h1');
 const softSkills = document.querySelectorAll('.item-soft-skills');
@@ -50,12 +50,12 @@ liens.forEach((element, index) => {
 
 // ---------- Partie Home ----------
 window.addEventListener('load', event => {
-    logo.classList.add('visible');
+    sun.classList.add('visible');
     vagues.classList.add('visible');
     title.classList.add('visible');
 });
 
-// ---------- Event Scroll - Soft Skills + Compétences + Porjets ----------
+// ---------- Event Scroll - Soft Skills + Compétences + Projets ----------
 window.addEventListener("scroll", event => {
     // Partie soft skills
     softSkills.forEach(element => {
@@ -97,7 +97,7 @@ function changeProgress() {
     barreHtml.style.width = '80%';
     setTimeout(() => { barreCss.style.width = '75%'; }, 150);
     setTimeout(() => { barreJs.style.width = '70%'; }, 300);
-    setTimeout(() => { barreReact.style.width = '45%'; }, 450);
+    setTimeout(() => { barreReact.style.width = '65%'; }, 450);
     setTimeout(() => { barreJquery.style.width = '80%'; }, 600);
     setTimeout(() => { barreJasmine.style.width = '70%'; }, 750);
     setTimeout(() => { barreUml.style.width = '80%'; }, 900);
