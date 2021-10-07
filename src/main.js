@@ -3,8 +3,10 @@ const rellax = new Rellax('.rellax');
 
 // --- Handlers DOM ---
 const body = document.querySelector('body');
+const nav = document.querySelector('nav');
 const boxHamburger = document.querySelector('#box-hamburger');
 const menu = document.querySelector('#menu');
+const newMenu = document.createElement('div');
 const liens = document.querySelectorAll('#container-liens a');
 const traitLien = document.querySelectorAll('.trait');
 const sun = document.querySelector('#sun');
@@ -13,8 +15,23 @@ const title = document.querySelector('h1');
 const softSkills = document.querySelectorAll('.item-soft-skills');
 const cercleProjets = document.querySelector('#cercle-projet');
 
+// Menu pour mobile
+newMenu.id = "menu-mobile";
+newMenu.setAttribute("title", "Menu");
+newMenu.innerHTML = "<p> MENU </p>"
+
 // ---------- Evenements box menu ----------
 boxHamburger.addEventListener('click', event => {
+    event.target.classList.toggle('active');
+    menu.classList.toggle('visible');
+    if (menu.classList.contains('visible')) {
+        body.style.overflow = 'hidden';
+    } else {
+        body.style.overflow = 'visible';
+    };
+});
+
+newMenu.addEventListener('click', event => {
     event.target.classList.toggle('active');
     menu.classList.toggle('visible');
     if (menu.classList.contains('visible')) {
@@ -57,9 +74,22 @@ window.addEventListener('load', event => {
 
 // ---------- Event Scroll - Soft Skills + Compétences + Projets ----------
 window.addEventListener("scroll", event => {
+
+    // Burger mobile
+    if (window.scrollY > 800) {
+        boxHamburger.classList.add('reduce');
+        nav.appendChild(newMenu);
+        
+    }
+    
+    if (window.scrollY < 800) {
+        boxHamburger.classList.remove('reduce');
+        newMenu.remove();
+    }
+    
     // Partie soft skills
     softSkills.forEach(element => {
-        if (window.scrollY > 880) {
+        if (window.scrollY > 920) {
             element.classList.add('visible');
         }
     });
@@ -70,7 +100,7 @@ window.addEventListener("scroll", event => {
     }
 
     // Partie projets 
-    if (window.scrollY > 1900) {
+    if (window.scrollY > 2200) {
         cercleProjets.classList.add('visible');
     }
 });
@@ -252,7 +282,7 @@ function initProjet(projets, filtreActif) {
         // Event Hover item grille
         hoverProjet(newProjet);
         // Event Ouverture / fermeture overlay
-        openOverlay(newProjet, newOverlay, newBoxOverlay, boxBackground, newBoxClose);
+        openOverlay(newProjet, newOverlay, newBoxOverlay, boxBackground, newBoxClose, contentOverlay);
     });
 }
 
@@ -274,13 +304,17 @@ function hoverProjet($projet) {
     });
 }
 
-function openOverlay($projet, $overlay, $newBoxOverlay, $boxBackground, $boxClose) {
+function openOverlay($projet, $overlay, $newBoxOverlay, $boxBackground, $boxClose, $content) {
     
     $projet.addEventListener("click", event => {
         $boxBackground.style.display = 'flex';
         $newBoxOverlay.style.display = 'flex';
         $overlay.style.display = 'flex';
-        body.style.overflowY = 'hidden'; 
+        body.style.overflowY = 'hidden';
+
+        // if (Number($content.style.height) < 750) {
+        //     $overlay.style.overflowY = 'none';
+        // }
 
         $boxBackground.addEventListener("click", event => {
             $overlay.scrollTop = 0;
@@ -298,6 +332,8 @@ function openOverlay($projet, $overlay, $newBoxOverlay, $boxBackground, $boxClos
             body.style.overflowY = 'scroll';
         });
     });
+
+    
 }
 
 function scrollToTop() {
